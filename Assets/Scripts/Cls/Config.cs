@@ -6,9 +6,9 @@ public class Config  {
 
 #if UNITY_IPHONE
  
-       public static string adsInIDGameOver = "ca-app-pub-5148482490300491/2810940969";
-    public static string adsInIDTrigger = "ca-app-pub-5148482490300491/2810940969";
-    public static string adsInIDBanner = "ca-app-pub-5148482490300491/2810940969";
+	public static string adsInIDGameOver = "ca-app-pub-2127327600096597/3539570066";
+	public static string adsInIDTrigger = "ca-app-pub-2127327600096597/7830168861";
+	public static string adsInIDBanner = "ca-app-pub-2127327600096597/2841441217";
      public static string hedieuhanh="ios4";
    
 
