@@ -85,7 +85,8 @@ public class QuestionBangNhau : MonoBehaviour {
 
     void doXuLy(SpItem bt)
     {
-      
+		try
+		{
         if (currentState == State.InGame1)
         {
             sp1 = bt;
@@ -117,6 +118,12 @@ public class QuestionBangNhau : MonoBehaviour {
                 StartCoroutine(WaitTimeXuLyBN(1f, bt));
             }
         }
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
            
     }
 
@@ -243,6 +250,8 @@ public class QuestionBangNhau : MonoBehaviour {
 
     public void GameOver()
     {
+		try
+		{
         currentState = State.Start;
         PopUpController.instance.HideQuestionBangNhau();
         if (mDiemB1 < 0)
@@ -253,6 +262,12 @@ public class QuestionBangNhau : MonoBehaviour {
         GameController.instance.sumTime += mTime;
         PopUpController.instance.ShowStopBangNhau(mDiemB1, ClsThaoTac.CoverTimeToString(1200 - mTime));
         resetTL();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
     public void resetTL()
     {
@@ -542,6 +557,7 @@ public class QuestionBangNhau : MonoBehaviour {
 
     public void Create()
     {
+		
         #region Singleton
 
         float positionX = startX;
@@ -575,10 +591,13 @@ public class QuestionBangNhau : MonoBehaviour {
 
         currentState = State.InGame1;
         txtLoading.gameObject.SetActive(false);
+
     }
 
     void setDataLst(ref List<PhepToan> lstP)
     {
+		try
+		{
         var children = new List<GameObject>();
         foreach (Transform child in this.transform)
         {
@@ -605,6 +624,12 @@ public class QuestionBangNhau : MonoBehaviour {
 
         lstP.RemoveAt(chon);
         }
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
        
     }
 

@@ -197,6 +197,8 @@ public class QuestionDN : MonoBehaviour {
 
     void btnA_OnClick()
     {
+		try
+		{
         if (currentState == State.InGame)
         {
             currentState = State.Click;
@@ -204,9 +206,17 @@ public class QuestionDN : MonoBehaviour {
             spSelect = btnA.gameObject.GetComponent<tk2dSprite>();
             doXuLy(select);
         }
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
     void btnB_OnClick()
     {
+		try
+		{
         if (currentState == State.InGame)
         {
             currentState = State.Click;
@@ -214,9 +224,17 @@ public class QuestionDN : MonoBehaviour {
             spSelect = btnB.gameObject.GetComponent<tk2dSprite>();
             doXuLy(select);
         }
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
     void btnC_OnClick()
     {
+		try
+		{
         if (currentState == State.InGame)
         {
             currentState = State.Click;
@@ -224,9 +242,17 @@ public class QuestionDN : MonoBehaviour {
             spSelect = btnC.gameObject.GetComponent<tk2dSprite>();
             doXuLy(select);
         }
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
     void btnD_OnClick()
     {
+		try
+		{
         if (currentState == State.InGame)
         {
             currentState = State.Click;
@@ -234,6 +260,12 @@ public class QuestionDN : MonoBehaviour {
             spSelect = btnD.gameObject.GetComponent<tk2dSprite>();
             doXuLy(select);
         }
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
 
     void doXuLy(int selectCase)
@@ -489,7 +521,8 @@ public class QuestionDN : MonoBehaviour {
 
     void btnContinute_OnClick()
     {
-        
+		try
+		{
         if (demsai < 3)
         {
             bangbieu.SetActive(false);
@@ -501,12 +534,19 @@ public class QuestionDN : MonoBehaviour {
             resetColorBt();
             gameOver();
         }
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
 
     void gameOver()
     {
 
-       
+		try
+		{
         currentState = State.Stop;
         if (diemSo < 0)
         {
@@ -517,12 +557,20 @@ public class QuestionDN : MonoBehaviour {
         PopUpController.instance.ShowStopDinhNui(diemSo, ClsThaoTac.CoverTimeToString(1200 - mTime));
         PopUpController.instance.HideQuestionDinhNui();
         resetThongSo();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
 
   
 
 	// Use this for initialization
 	void Start () {
+		try
+		{
         txtA = btnA.gameObject.transform.GetChild(0).GetComponent<tk2dTextMesh>();
         txtB = btnB.gameObject.transform.GetChild(0).GetComponent<tk2dTextMesh>();
         txtC = btnC.gameObject.transform.GetChild(0).GetComponent<tk2dTextMesh>();
@@ -536,6 +584,12 @@ public class QuestionDN : MonoBehaviour {
         btnC.OnClick += btnC_OnClick;
         btnD.OnClick += btnD_OnClick;
         btnContinute.OnClick += btnContinute_OnClick;
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 	
 	// Update is called once per frame

@@ -29,14 +29,30 @@ public class MainController : MonoBehaviour {
 
     void btnShare_OnClick()
     {
+		try
+		{
         ShareRate.Share();
         SoundManager.Instance.PlayAudioChoiTiep();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
 
     void btnRate_OnClick()
     {
+		try
+		{
         ShareRate.Rate();
         SoundManager.Instance.PlayAudioChoiTiep();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
 
  
@@ -45,6 +61,8 @@ public class MainController : MonoBehaviour {
 
     void btnBuyVip_OnClick()
     {
+		try
+		{
         SoundManager.Instance.PlayAudioChoiTiep();
         PopUpController.instance.ShowBuyItem();
         PopUpController.instance.HideMainGame();
@@ -53,10 +71,18 @@ public class MainController : MonoBehaviour {
         {
             bannerView.Hide();
         }
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
 
     void btnRank_OnClick()
     {
+		try
+		{
         SoundManager.Instance.PlayAudioChoiTiep();
 
         if (GameController.instance.vuotqua < 1)
@@ -83,11 +109,19 @@ public class MainController : MonoBehaviour {
         {
             bannerView.Hide();
         }
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
 
 
     void btnPlay_OnClick()
     {
+		try
+		{
         PopUpController.instance.HideMainGame();
         PopUpController.instance.ShowLevel();
         SoundManager.Instance.PlayAudioChoiTiep();
@@ -96,11 +130,19 @@ public class MainController : MonoBehaviour {
         {
             bannerView.Hide();
         }
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 
     }
 
     public void setData()
     {
+		try
+		{
         if (GameController.instance.vuotqua < 1)
         {
             btnRank.gameObject.transform.GetChild(0).GetComponent<tk2dTextMesh>().text = ClsLanguage.doQuangCao();
@@ -126,10 +168,18 @@ public class MainController : MonoBehaviour {
             RequestBanner();
             bannerView.Show();
         }
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
 
 	// Use this for initialization
 	void Start () {
+		try
+		{
         btnRank.OnClick += btnRank_OnClick;
         btnPlay.OnClick += btnPlay_OnClick;
         btnBuyVip.OnClick += btnBuyVip_OnClick;
@@ -144,6 +194,12 @@ public class MainController : MonoBehaviour {
         {
             btnBuyVip.gameObject.SetActive(false);
         }
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 	
 	// Update is called once per frame

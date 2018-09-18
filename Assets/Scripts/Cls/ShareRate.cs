@@ -5,13 +5,13 @@ using System;
 public class ShareRate  {
 
     public static string titleShare = "Fourth grade math";
-   // public static string LinkShare = "https://play.google.com/store/apps/details?id=toan.violympic.fourth";
-    //public static string LinkAd = "https://play.google.com/store/apps/details?id=balo.game.applefruits";
-   // public static string LinkAd2 = "https://play.google.com/store/apps/details?id=balo.game.cocaro";
+    public static string LinkShare = "https://play.google.com/store/apps/details?id=toan.violympic.fourth";
+    public static string LinkAd = "https://play.google.com/store/apps/details?id=balo.game.applefruits";
+    public static string LinkAd2 = "https://play.google.com/store/apps/details?id=balo.game.cocaro";
 
-	public static string LinkShare = "https://itunes.apple.com/us/app/fourth-math-kids-violympic/id1221353362";
-	public static string LinkAd = "https://itunes.apple.com/us/app/archery-bird/id1267512935";
-	public static string LinkAd2 = "https://itunes.apple.com/us/app/ioe-quick-math/id1239126482";
+	//public static string LinkShare = "https://itunes.apple.com/us/app/fourth-math-kids-violympic/id1221353362";
+	//public static string LinkAd = "https://itunes.apple.com/us/app/archery-bird/id1267512935";
+	///public static string LinkAd2 = "https://itunes.apple.com/us/app/ioe-quick-math/id1239126482";
 
     public static void Share()
     {

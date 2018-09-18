@@ -78,6 +78,8 @@ public class QuestionMonkey : MonoBehaviour
 
     void btnOnClick_Next()
     {
+		try
+		{
         if (currentState == State.InGame1)
         {
             if (buoc < 4)
@@ -95,6 +97,12 @@ public class QuestionMonkey : MonoBehaviour
 
             XuLy.transform.position = respawn.transform.position;
         }
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 
     }
 
@@ -146,7 +154,8 @@ public class QuestionMonkey : MonoBehaviour
     public void Create()
     {
 
-
+		try
+		{
         float positionX = startX;
 
         List<PhepToan> lstTMG = new List<PhepToan>();
@@ -172,6 +181,12 @@ public class QuestionMonkey : MonoBehaviour
         }
         XuatDaTa();
         txtLoading.gameObject.SetActive(false);
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
 
     void chonData(ref List<PhepToan> tmg1, ref List<PhepToan> tmg2, List<PhepToan> lstTam, int loai)
@@ -547,6 +562,8 @@ public class QuestionMonkey : MonoBehaviour
 
     void doXuLy(SpItemMonkey bt)
     {
+		try
+		{
         if (currentState == State.InGame1)
         {
             if (bt.Trangthai == true)
@@ -561,6 +578,12 @@ public class QuestionMonkey : MonoBehaviour
                 StartCoroutine(WaitTimeXuLyTT(1f, bt));
             }
         }
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 
     }
 
@@ -688,6 +711,8 @@ public class QuestionMonkey : MonoBehaviour
 
     void GameOver()
     {
+		try
+		{
         currentState = State.Start;
         PopUpController.instance.HideQuestionMonkey();
         if (mDiemB3 < 0)
@@ -699,6 +724,12 @@ public class QuestionMonkey : MonoBehaviour
         PopUpController.instance.ShowStopMonkey(mDiemB3, ClsThaoTac.CoverTimeToString(1200 - mTime));
 
         resetTL();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
     public void resetTL()
     {
@@ -944,10 +975,17 @@ public class QuestionMonkey : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+		try
+		{
         btnNext.OnClick += btnOnClick_Next;
         positionStartX = respawn.transform.position.x;
         txtLoading.text = ClsLanguage.doLoading();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
 
     // Update is called once per frame
